@@ -100,7 +100,7 @@ def disparate_impact_ratio(
     Raises
     ------
     ValueError
-        If inputs have mismatched lengths, are empty, or contain missing values.
+        Propagated from `selection_rate_by_group` if inputs have mismatched lengths, are empty, or contain missing values.
     """
     rates = selection_rate_by_group(y_pred, sensitive_features, pos_label=pos_label)
     values = np.array(list(rates.values()), dtype=float)
